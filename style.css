@@ -157,6 +157,27 @@ h2::after {
         gap: 5px;
     }
 }
+/* Add to your existing CSS */
+
+.week-link {
+    display: inline-block;
+    margin-top: 15px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95em;
+    transition: transform 0.2s;
+}
+
+.week-link:hover {
+    transform: translateX(5px);
+    text-decoration: underline;
+}
+
+/* Make the week-log spacing adjust for the link */
+.week-log p {
+    margin-bottom: 5px;
+}
 html {
     scroll-behavior: smooth;
 }
