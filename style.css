@@ -1,3 +1,11 @@
+body {
+    background-color: red !important;
+}
+
+h1 {
+    color: yellow !important;
+    font-size: 50px !important;
+}
 :root {
     --primary: #4361ee;
     --secondary: #3f37c9;
