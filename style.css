@@ -1,51 +1,91 @@
+:root {
+    --space: #0a1928;
+    --navy: #11212e;
+    --cream: #f5efe6;
+    --gold: #c6a43f;
+    --sage: #8ba888;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.8;
     margin: 0;
-    padding: 20px;
-    background-color: #f4f4f4;
-    color: #333;
+    padding: 0;
+    background: var(--cream);
+    color: var(--navy);
 }
 
 .container {
-    max-width: 800px;
-    margin: auto;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px;
     background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
 }
 
 h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
+    font-size: 3.5em;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: var(--space);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 h2 {
-    color: #34495e;
-    margin-top: 30px;
+    font-size: 2.2em;
+    font-weight: 400;
+    color: var(--gold);
+    margin: 50px 0 20px;
+    font-style: italic;
 }
 
 .project {
-    background: #f9f9f9;
-    padding: 15px;
-    margin: 15px 0;
-    border-left: 4px solid #3498db;
-    border-radius: 0 5px 5px 0;
+    padding: 30px;
+    margin: 30px 0;
+    background: var(--cream);
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.project:hover {
+    border-color: var(--gold);
+    transform: scale(1.02);
+}
+
+.project h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+    color: var(--space);
 }
 
 a {
-    color: #3498db;
-    text-decoration: none;
+    color: var(--sage);
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
 a:hover {
-    text-decoration: underline;
+    color: var(--gold);
 }
 
 .footer {
-    margin-top: 40px;
+    margin-top: 60px;
+    padding: 30px;
     text-align: center;
-    color: #7f8c8d;
+    border-top: 1px solid var(--gold);
+    font-style: italic;
+    color: #666;
+}
+html {
+    scroll-behavior: smooth;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.project {
+    animation: fadeIn 0.5s ease-out;
 }
