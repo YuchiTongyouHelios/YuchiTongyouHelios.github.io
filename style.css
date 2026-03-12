@@ -7,45 +7,19 @@
     --dark: #1e2f4d;
 }
 
-/* Mouse trail effect */
-.mouse-trail {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: var(--yellow);
-    filter: blur(8px);
-    pointer-events: none;
-    z-index: 9999;
-    opacity: 0.6;
-    transition: width 0.3s, height 0.3s;
-}
-
-.mouse-trail-2 {
-    width: 40px;
-    height: 40px;
-    background: var(--pink);
-    filter: blur(12px);
-    opacity: 0.4;
-    transition: all 0.15s ease;
-}
-
-.mouse-trail-3 {
-    width: 15px;
-    height: 15px;
-    background: var(--blue);
-    filter: blur(6px);
-    opacity: 0.5;
-    transition: all 0.1s ease;
-}
-
+/* Custom Rainbow Star Cursor */
 body {
     font-family: 'Poppins', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
     background: linear-gradient(45deg, var(--yellow), var(--pink));
     margin: 0;
     padding: 2rem;
     min-height: 100vh;
-    cursor: none; /* Optional: hides default cursor for more trail impact */
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M16 2 L20 12 L30 12 L22 19 L25 30 L16 24 L7 30 L10 19 L2 12 L12 12 Z" fill="%23f9e75c" stroke="%231e2f4d" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="white"/><circle cx="20" cy="12" r="2" fill="white"/><circle cx="12" cy="12" r="1" fill="black"/><circle cx="20" cy="12" r="1" fill="black"/></svg>') 16 16, auto;
+}
+
+/* Different cursor for clickable items */
+a, button, .week-link, .principles li, .project-name {
+    cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"><path d="M16 2 L20 12 L30 12 L22 19 L25 30 L16 24 L7 30 L10 19 L2 12 L12 12 Z" fill="%2385c7f2" stroke="%231e2f4d" stroke-width="2"/><circle cx="12" cy="12" r="2" fill="white"/><circle cx="20" cy="12" r="2" fill="white"/><circle cx="12" cy="12" r="1" fill="black"/><circle cx="20" cy="12" r="1" fill="black"/></svg>') 16 16, pointer;
 }
 
 .container {
@@ -150,6 +124,12 @@ h1 {
     border-radius: 40px;
     border: 3px solid var(--dark);
     font-weight: 600;
+    transition: all 0.2s;
+}
+
+.principles li:hover {
+    background: var(--purple);
+    transform: translateY(-3px);
 }
 
 .start-date {
@@ -171,7 +151,7 @@ h1 {
     opacity: 0.8;
 }
 
-/* Optional: Add floating animation to elements */
+/* Floating animation */
 @keyframes gentleFloat {
     0% { transform: translateY(0px); }
     50% { transform: translateY(-5px); }
