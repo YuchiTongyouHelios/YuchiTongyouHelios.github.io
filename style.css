@@ -1,72 +1,188 @@
-<!-- Mouse Trail Effect -->
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    // Create trail elements
-    const trail1 = document.createElement('div');
-    trail1.className = 'mouse-trail';
-    
-    const trail2 = document.createElement('div');
-    trail2.className = 'mouse-trail mouse-trail-2';
-    
-    const trail3 = document.createElement('div');
-    trail3.className = 'mouse-trail mouse-trail-3';
-    
-    document.body.appendChild(trail1);
-    document.body.appendChild(trail2);
-    document.body.appendChild(trail3);
-    
-    // Store last positions for smooth trailing
-    let mouseX = 0, mouseY = 0;
-    let trail1X = 0, trail1Y = 0;
-    let trail2X = 0, trail2Y = 0;
-    let trail3X = 0, trail3Y = 0;
-    
-    // Track mouse movement
-    document.addEventListener('mousemove', function(e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-    });
-    
-    // Smooth animation loop
-    function animateTrails() {
-        // Smooth follow for trail 1 (closest)
-        trail1X += (mouseX - trail1X) * 0.2;
-        trail1Y += (mouseY - trail1Y) * 0.2;
-        
-        // Slower follow for trail 2
-        trail2X += (mouseX - trail2X) * 0.1;
-        trail2Y += (mouseY - trail2Y) * 0.1;
-        
-        // Even slower for trail 3
-        trail3X += (mouseX - trail3X) * 0.05;
-        trail3Y += (mouseY - trail3Y) * 0.05;
-        
-        // Apply positions
-        trail1.style.left = (trail1X - 10) + 'px';
-        trail1.style.top = (trail1Y - 10) + 'px';
-        
-        trail2.style.left = (trail2X - 20) + 'px';
-        trail2.style.top = (trail2Y - 20) + 'px';
-        
-        trail3.style.left = (trail3X - 7.5) + 'px';
-        trail3.style.top = (trail3Y - 7.5) + 'px';
-        
-        requestAnimationFrame(animateTrails);
-    }
-    
-    animateTrails();
-    
-    // Hide trails when mouse leaves window
-    document.addEventListener('mouseleave', function() {
-        trail1.style.opacity = '0';
-        trail2.style.opacity = '0';
-        trail3.style.opacity = '0';
-    });
-    
-    document.addEventListener('mouseenter', function() {
-        trail1.style.opacity = '0.6';
-        trail2.style.opacity = '0.4';
-        trail3.style.opacity = '0.5';
-    });
-});
-</script>
+:root {
+    --yellow: #f9e75c;
+    --pink: #ff9f9f;
+    --blue: #85c7f2;
+    --green: #a1dd8c;
+    --purple: #ca9efa;
+    --dark: #1e2f4d;
+}
+
+/* Mouse trail effect */
+.mouse-trail {
+    position: fixed;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--yellow);
+    filter: blur(8px);
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.6;
+    transition: width 0.3s, height 0.3s;
+}
+
+.mouse-trail-2 {
+    width: 40px;
+    height: 40px;
+    background: var(--pink);
+    filter: blur(12px);
+    opacity: 0.4;
+    transition: all 0.15s ease;
+}
+
+.mouse-trail-3 {
+    width: 15px;
+    height: 15px;
+    background: var(--blue);
+    filter: blur(6px);
+    opacity: 0.5;
+    transition: all 0.1s ease;
+}
+
+body {
+    font-family: 'Poppins', 'Comic Sans MS', 'Chalkboard SE', sans-serif;
+    background: linear-gradient(45deg, var(--yellow), var(--pink));
+    margin: 0;
+    padding: 2rem;
+    min-height: 100vh;
+    cursor: none; /* Optional: hides default cursor for more trail impact */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    padding: 2.5rem;
+    border-radius: 50px;
+    box-shadow: 0 20px 0 rgba(0,0,0,0.1);
+    border: 5px solid white;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 3rem;
+    margin: 0;
+    background: linear-gradient(135deg, var(--dark), var(--purple));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+    border-bottom: 8px dotted var(--pink);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    background: var(--yellow);
+    padding: 1rem 2rem;
+    border-radius: 60px;
+    margin: 2rem 0;
+    font-weight: 500;
+}
+
+.week-log {
+    background: white;
+    border-radius: 30px 30px 30px 0;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border: 4px solid;
+    transition: all 0.1s ease;
+    box-shadow: 8px 8px 0 rgba(0,0,0,0.1);
+    position: relative;
+    z-index: 2;
+}
+
+.week-log:nth-child(2) { border-color: var(--blue); }
+.week-log:nth-child(3) { border-color: var(--green); }
+.week-log:nth-child(4) { border-color: var(--purple); }
+
+.week-log:hover {
+    transform: rotate(0.5deg) scale(1.01);
+    box-shadow: 12px 12px 0 var(--pink);
+}
+
+.week-log h3 {
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.project-name {
+    background: var(--yellow);
+    padding: 0.2rem 1rem;
+    border-radius: 40px;
+    font-size: 1rem;
+    border: 2px solid var(--dark);
+}
+
+.week-link {
+    display: inline-block;
+    margin-top: 1rem;
+    background: var(--blue);
+    color: var(--dark);
+    padding: 0.6rem 1.5rem;
+    border-radius: 40px;
+    text-decoration: none;
+    font-weight: 600;
+    border: 3px solid var(--dark);
+    transition: 0.1s;
+}
+
+.week-link:hover {
+    background: var(--pink);
+    transform: scale(0.98);
+}
+
+.principles {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.principles li {
+    background: var(--green);
+    padding: 0.6rem 1.2rem;
+    border-radius: 40px;
+    border: 3px solid var(--dark);
+    font-weight: 600;
+}
+
+.start-date {
+    background: var(--purple);
+    color: white;
+    padding: 1.5rem;
+    border-radius: 80px;
+    font-size: 1.5rem;
+    text-align: center;
+    border: 5px solid var(--yellow);
+    margin-top: 2rem;
+    font-weight: bold;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--dark);
+    opacity: 0.8;
+}
+
+/* Optional: Add floating animation to elements */
+@keyframes gentleFloat {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+.week-log {
+    animation: gentleFloat 6s ease-in-out infinite;
+    animation-delay: calc(var(--order) * 0.2s);
+}
+
+.week-log:nth-child(2) { --order: 1; }
+.week-log:nth-child(3) { --order: 2; }
+.week-log:nth-child(4) { --order: 3; }
