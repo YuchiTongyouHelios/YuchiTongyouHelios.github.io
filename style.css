@@ -1,86 +1,161 @@
 body {
     background-color: red !important;
 }
-
 :root {
-    --space: #0a1928;
-    --navy: #11212e;
-    --cream: #f5efe6;
-    --gold: #c6a43f;
-    --sage: #8ba888;
+    --primary: #3b82f6;
+    --primary-dark: #2563eb;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --text: #0f172a;
+    --text-light: #475569;
+    --border: #e2e8f0;
+    --week-1: #ef4444;
+    --week-2: #10b981;
+    --week-3: #8b5cf6;
 }
 
 body {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    line-height: 1.8;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
     margin: 0;
-    padding: 0;
-    background: var(--cream);
-    color: var(--navy);
+    padding: 20px;
+    background-color: var(--bg);
+    color: var(--text);
 }
 
 .container {
-    max-width: 900px;
+    max-width: 800px;
     margin: 0 auto;
+    background: var(--card-bg);
     padding: 40px;
-    background: white;
-    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    border-radius: 16px;
+    box-shadow: 0 10px 40px -10px rgba(0,0,0,0.1);
 }
 
 h1 {
-    font-size: 3.5em;
-    font-weight: 300;
-    letter-spacing: -1px;
-    color: var(--space);
-    border-bottom: 1px solid var(--gold);
-    padding-bottom: 20px;
+    font-size: 2.5em;
+    color: var(--primary);
+    margin: 0 0 10px 0;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: var(--text-light);
     margin-bottom: 40px;
 }
 
 h2 {
-    font-size: 2.2em;
-    font-weight: 400;
-    color: var(--gold);
-    margin: 50px 0 20px;
-    font-style: italic;
-}
-
-.project {
-    padding: 30px;
-    margin: 30px 0;
-    background: var(--cream);
-    transition: all 0.3s;
-    border: 1px solid transparent;
-}
-
-.project:hover {
-    border-color: var(--gold);
-    transform: scale(1.02);
-}
-
-.project h3 {
     font-size: 1.8em;
-    margin-top: 0;
-    color: var(--space);
+    color: var(--text);
+    margin: 40px 0 20px 0;
+    position: relative;
 }
 
-a {
-    color: var(--sage);
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+    margin-top: 8px;
+}
+
+.week-log {
+    background: var(--bg);
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 12px;
+    border-left: 4px solid;
+    transition: transform 0.2s;
+}
+
+.week-log:hover {
+    transform: translateX(5px);
+}
+
+.week-log:nth-child(2) { border-left-color: var(--week-1); }
+.week-log:nth-child(3) { border-left-color: var(--week-2); }
+.week-log:nth-child(4) { border-left-color: var(--week-3); }
+
+.week-log h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.3em;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.project-name {
+    background: var(--primary);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.8em;
     font-weight: 500;
-    transition: color 0.2s;
 }
 
-a:hover {
-    color: var(--gold);
+.week-log p {
+    margin: 0;
+    color: var(--text-light);
+}
+
+.principles {
+    list-style: none;
+    padding: 0;
+}
+
+.principles li {
+    padding: 10px 0 10px 30px;
+    position: relative;
+    border-bottom: 1px solid var(--border);
+}
+
+.principles li:last-child {
+    border-bottom: none;
+}
+
+.principles li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--primary);
+    font-weight: bold;
+}
+
+.start-date {
+    text-align: center;
+    font-size: 1.2em;
+    margin-top: 40px;
+    padding: 20px;
+    background: var(--primary);
+    color: white;
+    border-radius: 8px;
 }
 
 .footer {
-    margin-top: 60px;
-    padding: 30px;
+    margin-top: 40px;
     text-align: center;
-    border-top: 1px solid var(--gold);
-    font-style: italic;
-    color: #666;
+    color: var(--text-light);
+    font-size: 0.9em;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    .week-log h3 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
 }
 html {
     scroll-behavior: smooth;
