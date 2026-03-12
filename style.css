@@ -3,83 +3,84 @@ body {
 }
 
 :root {
-    --bg-dark: #1a1b2f;
-    --bg-card: #252642;
-    --text-light: #e0e0e0;
-    --primary: #6d5dfc;
-    --secondary: #5b4df9;
-    --accent: #ff6b6b;
+    --space: #0a1928;
+    --navy: #11212e;
+    --cream: #f5efe6;
+    --gold: #c6a43f;
+    --sage: #8ba888;
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.6;
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    line-height: 1.8;
     margin: 0;
     padding: 0;
-    background: var(--bg-dark);
-    color: var(--text-light);
+    background: var(--cream);
+    color: var(--navy);
 }
 
 .container {
     max-width: 900px;
     margin: 0 auto;
-    padding: 40px 30px;
+    padding: 40px;
+    background: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
 }
 
 h1 {
-    color: white;
-    font-size: 3em;
-    text-align: center;
-    margin-bottom: 20px;
-    background: linear-gradient(45deg, var(--primary), var(--accent));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    border-bottom: none;
+    font-size: 3.5em;
+    font-weight: 300;
+    letter-spacing: -1px;
+    color: var(--space);
+    border-bottom: 1px solid var(--gold);
+    padding-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 h2 {
-    color: var(--primary);
-    font-size: 2em;
-    margin-top: 40px;
-    position: relative;
-    padding-left: 20px;
-}
-
-h2::before {
-    content: '◆';
-    position: absolute;
-    left: -5px;
-    color: var(--accent);
+    font-size: 2.2em;
+    font-weight: 400;
+    color: var(--gold);
+    margin: 50px 0 20px;
+    font-style: italic;
 }
 
 .project {
-    background: var(--bg-card);
-    padding: 25px;
-    margin: 25px 0;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-    border: 1px solid rgba(255,255,255,0.1);
-    backdrop-filter: blur(5px);
+    padding: 30px;
+    margin: 30px 0;
+    background: var(--cream);
+    transition: all 0.3s;
+    border: 1px solid transparent;
+}
+
+.project:hover {
+    border-color: var(--gold);
+    transform: scale(1.02);
+}
+
+.project h3 {
+    font-size: 1.8em;
+    margin-top: 0;
+    color: var(--space);
 }
 
 a {
-    color: var(--primary);
-    text-decoration: none;
-    border-bottom: 1px dashed var(--primary);
+    color: var(--sage);
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
 a:hover {
-    color: var(--accent);
-    border-bottom-color: var(--accent);
+    color: var(--gold);
 }
 
 .footer {
     margin-top: 60px;
-    padding: 20px;
+    padding: 30px;
     text-align: center;
-    background: var(--bg-card);
-    border-radius: 12px;
-    color: #888;
+    border-top: 1px solid var(--gold);
+    font-style: italic;
+    color: #666;
 }
 html {
     scroll-behavior: smooth;
