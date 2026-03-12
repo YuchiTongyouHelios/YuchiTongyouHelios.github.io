@@ -157,7 +157,6 @@ h2::after {
         gap: 5px;
     }
 }
-/* Add to your existing CSS */
 
 .week-link {
     display: inline-block;
@@ -174,9 +173,13 @@ h2::after {
     text-decoration: underline;
 }
 
-/* Make the week-log spacing adjust for the link */
 .week-log p {
     margin-bottom: 5px;
+}
+.note {
+    font-size: 0.8em;
+    color: var(--text-light);
+    font-style: italic;
 }
 html {
     scroll-behavior: smooth;
