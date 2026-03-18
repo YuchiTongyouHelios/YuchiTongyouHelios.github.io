@@ -5,6 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Coding Journey | 14-Year-Old Developer</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        .tree {
+            font-family: sans-serif;
+            line-height: 2;
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        .tree ul {
+            list-style: none;
+            margin: 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        .tree ul li {
+            border-left: 2px solid #0366d6;
+            margin: 0;
+            padding: 0 0 8px 20px;
+            position: relative;
+        }
+        .tree ul li:last-child {
+            border-left-color: transparent;
+        }
+        .tree ul li::before {
+            content: '';
+            width: 20px;
+            border-bottom: 2px solid #0366d6;
+            position: absolute;
+            left: -2px;
+            top: 0.8em;
+        }
+        .tree .root {
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-left: 0;
+            padding-left: 0;
+            border-left: none;
+        }
+        .tree .root::before {
+            display: none;
+        }
+        .tree a {
+            text-decoration: none;
+            color: #0366d6;
+        }
+        .tree a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -38,6 +89,20 @@
                 </h3>
                 <p>A focused week of drills on indexes, return vs print, function parameters, file save timing, and rebuilding core concepts from scratch to own them.</p>
                 <a href="https://raw.githubusercontent.com/YuchiTongyouHelios/coding-journal/refs/heads/main/week3.md" class="week-link" target="_blank">Read Week 3 Details →</a>
+            </div>
+
+            <div class="tree">
+                <ul>
+                    <li class="root">
+                        <a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/month1.md">
+                            MONTH ONE: 30 days, 4 projects, 1 hard lesson
+                        </a>
+                    </li>
+                    <li><a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/week1.md">Week 1: Number Guesser</a></li>
+                    <li><a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/week2.md">Week 2: To-Do List</a></li>
+                    <li><a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/week3.md">Week 3: Drilling Fundamentals</a></li>
+                    <li><a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/week4.md">Week 4: Tools & Lessons</a></li>
+                </ul>
             </div>
         </section>
 
