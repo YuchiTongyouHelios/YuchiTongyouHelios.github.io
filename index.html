@@ -6,53 +6,57 @@
     <title>My Coding Journey | 14-Year-Old Developer</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        .tree {
-            font-family: sans-serif;
-            line-height: 2;
-            max-width: 600px;
-            margin: 30px auto;
-            padding: 20px;
-            background: #f8f9fa;
+        /* Additional styles for month block */
+        .month-block {
+            background: #f0f4f8;
+            border-left: 5px solid #0366d6;
             border-radius: 8px;
+            padding: 20px;
+            margin: 30px 0;
         }
-        .tree ul {
-            list-style: none;
-            margin: 0;
-            padding-left: 20px;
-            position: relative;
+        .month-block h3 {
+            margin-top: 0;
+            color: #0366d6;
+            font-size: 1.8em;
         }
-        .tree ul li {
-            border-left: 2px solid #0366d6;
-            margin: 0;
-            padding: 0 0 8px 20px;
-            position: relative;
+        .month-dates {
+            font-size: 0.7em;
+            font-weight: normal;
+            color: #555;
         }
-        .tree ul li:last-child {
-            border-left-color: transparent;
-        }
-        .tree ul li::before {
-            content: '';
-            width: 20px;
-            border-bottom: 2px solid #0366d6;
-            position: absolute;
-            left: -2px;
-            top: 0.8em;
-        }
-        .tree .root {
+        .month-link {
+            display: inline-block;
+            margin-top: 15px;
             font-weight: bold;
-            font-size: 1.2em;
-            margin-left: 0;
-            padding-left: 0;
-            border-left: none;
-        }
-        .tree .root::before {
-            display: none;
-        }
-        .tree a {
+            color: #0366d6;
             text-decoration: none;
+        }
+        .month-link:hover {
+            text-decoration: underline;
+        }
+        /* Keep existing week-log styles */
+        .week-log {
+            background: white;
+            border-left: 3px solid #0366d6;
+            border-radius: 5px;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .week-log h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.3em;
             color: #0366d6;
         }
-        .tree a:hover {
+        .week-log .project-name {
+            font-weight: normal;
+            color: #555;
+        }
+        .week-link {
+            color: #0366d6;
+            text-decoration: none;
+        }
+        .week-link:hover {
             text-decoration: underline;
         }
     </style>
@@ -65,44 +69,43 @@
         </header>
 
         <section>
-            <h2>Weekly Logs</h2>
-            
-            <div class="week-log">
-                <h3>
-                    Week 1 <span class="project-name">Number Guesser</span>
-                </h3>
-                <p>A command-line game with difficulty levels, persistent high scores, and file storage.</p>
-                <a href="https://raw.githubusercontent.com/YuchiTongyouHelios/coding-journal/refs/heads/main/week1.md" class="week-link" target="_blank">Read Week 1 Details →</a>
-            </div>
-            
-            <div class="week-log">
-                <h3>
-                    Week 2 <span class="project-name">To-Do List App</span>
-                </h3>
-                <p>A terminal-based task manager with add/view/remove/complete, persistent file storage, input validation, search, and a fully refactored function-based structure.</p>
-                <a href="https://raw.githubusercontent.com/YuchiTongyouHelios/coding-journal/refs/heads/main/week2.md" class="week-link" target="_blank">Read Week 2 Details →</a>
-            </div>
-            
-            <div class="week-log">
-                <h3>
-                    Week 3 <span class="project-name">Drilling the Fundamentals</span>
-                </h3>
-                <p>A focused week of drills on indexes, return vs print, function parameters, file save timing, and rebuilding core concepts from scratch to own them.</p>
-                <a href="https://raw.githubusercontent.com/YuchiTongyouHelios/coding-journal/refs/heads/main/week3.md" class="week-link" target="_blank">Read Week 3 Details →</a>
-            </div>
+            <h2>Monthly Overview</h2>
 
-            <div class="tree">
-                <ul>
-                    <li class="root">
-                        <a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/month1.md">
-                            MONTH ONE: 30 days, 4 projects, 1 hard lesson
-                        </a>
-                    </li>
-                    <li><a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/week1.md">Week 1: Number Guesser</a></li>
-                    <li><a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/week2.md">Week 2: To-Do List</a></li>
-                    <li><a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/week3.md">Week 3: Drilling Fundamentals</a></li>
-                    <li><a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/week4.md">Week 4: Tools & Lessons</a></li>
-                </ul>
+            <!-- NEW: Month One Block -->
+            <div class="month-block">
+                <h3>Month One <span class="month-dates">(Feb 14 – Mar 14, 2026)</span></h3>
+                <p>30 days, 4 projects, 1 hard lesson. Here's what I built and learned each week.</p>
+
+                <!-- Week 1 -->
+                <div class="week-log">
+                    <h3>Week 1 <span class="project-name">Number Guesser</span></h3>
+                    <p>A command-line game with difficulty levels, persistent high scores, and file storage.</p>
+                    <a href="https://raw.githubusercontent.com/YuchiTongyouHelios/coding-journal/refs/heads/main/week1.md" class="week-link" target="_blank">Read Week 1 Details →</a>
+                </div>
+
+                <!-- Week 2 -->
+                <div class="week-log">
+                    <h3>Week 2 <span class="project-name">To-Do List App</span></h3>
+                    <p>A terminal-based task manager with add/view/remove/complete, persistent file storage, input validation, search, and a fully refactored function-based structure.</p>
+                    <a href="https://raw.githubusercontent.com/YuchiTongyouHelios/coding-journal/refs/heads/main/week2.md" class="week-link" target="_blank">Read Week 2 Details →</a>
+                </div>
+
+                <!-- Week 3 -->
+                <div class="week-log">
+                    <h3>Week 3 <span class="project-name">Drilling the Fundamentals</span></h3>
+                    <p>A focused week of drills on indexes, return vs print, function parameters, file save timing, and rebuilding core concepts from scratch to own them.</p>
+                    <a href="https://raw.githubusercontent.com/YuchiTongyouHelios/coding-journal/refs/heads/main/week3.md" class="week-link" target="_blank">Read Week 3 Details →</a>
+                </div>
+
+                <!-- Week 4 (newly added) -->
+                <div class="week-log">
+                    <h3>Week 4 <span class="project-name">Tools & Lessons</span></h3>
+                    <p>VS Code setup, Git workflow, daily Python drills (Mad Libs, Sentence Builder, Word Counter), and the AI honesty lesson.</p>
+                    <a href="https://raw.githubusercontent.com/YuchiTongyouHelios/coding-journal/refs/heads/main/week4.md" class="week-link" target="_blank">Read Week 4 Details →</a>
+                </div>
+
+                <!-- Link to full month report -->
+                <a href="https://github.com/YuchiTongyouHelios/coding-journal/blob/main/month1.md" class="month-link" target="_blank">📘 Read the Full Month 1 Report →</a>
             </div>
         </section>
 
